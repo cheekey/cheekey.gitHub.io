@@ -5,19 +5,22 @@
   
   <title>ECMAScript6 | keyjs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常量const常量const和变量相反，变量是可变的量而常量是不可变的量，一但声明赋值就没办法修改，会报错，如下；  
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747">
+  <meta name="description" content="常量constjs
+常量const和变量相反，变量是可变的量而常量是不可变的量，一但声明赋值就没办法修改，会报错，如下；  
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECMAScript6">
 <meta property="og:url" content="http://www.keyjs.com/2016/10/12/ECMAScript6/index.html">
 <meta property="og:site_name" content="keyjs">
-<meta property="og:description" content="常量const常量const和变量相反，变量是可变的量而常量是不可变的量，一但声明赋值就没办法修改，会报错，如下；  
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747">
-<meta property="og:updated_time" content="2016-10-12T11:06:21.000Z">
+<meta property="og:description" content="常量constjs
+常量const和变量相反，变量是可变的量而常量是不可变的量，一但声明赋值就没办法修改，会报错，如下；  
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273">
+<meta property="og:updated_time" content="2016-10-12T11:27:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECMAScript6">
-<meta name="twitter:description" content="常量const常量const和变量相反，变量是可变的量而常量是不可变的量，一但声明赋值就没办法修改，会报错，如下；  
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747">
+<meta name="twitter:description" content="常量constjs
+常量const和变量相反，变量是可变的量而常量是不可变的量，一但声明赋值就没办法修改，会报错，如下；  
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273">
   
     <link rel="alternate" href="/atom.xml" title="keyjs" type="application/atom+xml">
   
@@ -92,7 +95,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="常量const"><a href="#常量const" class="headerlink" title="常量const"></a>常量const</h2><p>常量const和变量相反，变量是可变的量而常量是不可变的量，一但声明赋值就没办法修改，会报错，如下；  </p>
+        <h2 id="常量const"><a href="#常量const" class="headerlink" title="常量const"></a>常量const</h2><p><a href="http://keyjs.com/js/script.js" target="_blank" rel="external">js</a></p>
+<p>常量const和变量相反，变量是可变的量而常量是不可变的量，一但声明赋值就没办法修改，会报错，如下；  </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</div><div class="line">a=<span class="number">2</span>;</div><div class="line">a=<span class="number">3</span>;</div><div class="line"><span class="comment">//a可以不断改变其值，最终结果为3；    </span></div><div class="line"></div><div class="line"><span class="keyword">const</span> b = <span class="number">1</span>;</div><div class="line">b=<span class="number">2</span>;<span class="comment">//这时就会返回修改不成功；</span></div><div class="line"><span class="comment">//现在的b还是等于1；        </span></div><div class="line"><span class="string">``</span><span class="string">`        </span></div><div class="line"></div><div class="line">### let声明      </div><div class="line">let声明和var声明有一个不同点，let声明有作用域的概念，只在代码块里面有效，比如说在一个函数里面用let声明let a ＝ 1；那么在函数外部是取不到这个let声明的a的值，我们还可以在函数外部在声明一个let a ＝2；这是不冲突的但不可以重复声明，(不在同一代码块内重复声明即可（无论let还是const）)其他声明方式也不可以，在一个代码块里声明两次，如下 ；    </div><div class="line"></div><div class="line">`<span class="string">``</span>javascript      </div><div class="line"></div><div class="line"><span class="keyword">let</span> k = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">dom</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> k = <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">dom();</div><div class="line"><span class="built_in">console</span>.log(k);<span class="comment">// 1；这时的k还是等于1，函数内部的let k不会影响到函数以外的变量k；</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;<span class="keyword">var</span> qq = <span class="number">1</span>;<span class="keyword">let</span> ww =<span class="number">3</span>&#125;</div><div class="line">qq</div><div class="line"><span class="comment">//1</span></div><div class="line">ww</div><div class="line"><span class="comment">//Uncaught ReferenceError: ww is not defined(…)//报错了，let只在所在代码快内有效！（特别注意！！！）</span></div><div class="line"></div><div class="line"><span class="string">``</span><span class="string">`           </span></div><div class="line">### 解构?赋值！     </div><div class="line">从数组和对象中取值，对变量进行赋值。这个过程成为解构；  赋值 var a ＝ 1；Es6以前也就Es5的赋值方法；      </div><div class="line">Es6允许这样     </div><div class="line"></div><div class="line">`<span class="string">``</span>javascript </div><div class="line"><span class="keyword">var</span> [a,b,c] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="comment">//变量与值一一对应a＝1；b＝2；c＝3；  </span></div><div class="line">若 <span class="keyword">var</span> [a,b,c,d] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];    </div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//这是d没有对应值d＝undefined；   </span></div><div class="line"><span class="comment">//也可以嵌套     </span></div><div class="line"><span class="keyword">var</span> [a,[b,[c]]] = [<span class="number">1</span>,[<span class="number">2</span>,[<span class="number">3</span>]]];</div><div class="line"><span class="comment">//这样也是对应的，左右层级对应；     </span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//对undefined，null进行解构都会报错；   </span></div><div class="line"><span class="keyword">var</span> [q] = <span class="literal">undefined</span>;<span class="comment">//报错    </span></div><div class="line"><span class="keyword">var</span> [w] = <span class="literal">null</span>;<span class="comment">//报错     </span></div><div class="line"><span class="keyword">var</span> [d,f] = [<span class="literal">null</span>,<span class="literal">null</span>]；<span class="comment">//这样不报错 ；  ^_^      </span></div><div class="line"></div><div class="line">     </div><div class="line"><span class="comment">//解构允许指定默认初始值（好用）   </span></div><div class="line"><span class="keyword">var</span> [q=<span class="number">12</span>] = [];</div><div class="line"><span class="built_in">console</span>.log(q)<span class="comment">//12；</span></div><div class="line"><span class="comment">//右边赋值为空数组，但是q指定默认初始值为12；当右边为空时初始值才会生效      </span></div><div class="line"><span class="keyword">var</span> [q=<span class="number">12</span>] = [<span class="number">1</span>];</div><div class="line"><span class="built_in">console</span>.log(q)<span class="comment">//1；   </span></div><div class="line"><span class="comment">//因为右边不是空数组有值</span></div><div class="line"><span class="keyword">var</span> [ff=<span class="number">12</span>] = [<span class="literal">null</span>]</div><div class="line"><span class="built_in">console</span>.log(ff)<span class="comment">//null</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> [ff=<span class="number">12</span>] = [<span class="literal">undefined</span>];</div><div class="line"><span class="built_in">console</span>.log(ff)<span class="comment">//12；</span></div><div class="line"><span class="string">``</span><span class="string">`        </span></div><div class="line">## 对象解构赋值       </div><div class="line">和数组不一样的是变量和值不是靠顺序对应的，而是靠key来对应的    ，将已声明的变量进行解构赋值。</div><div class="line"></div><div class="line">`<span class="string">``</span>javascript   </div><div class="line"><span class="keyword">var</span> &#123;aaa&#125; = &#123;<span class="attr">aaa</span>:<span class="string">'1234556789'</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(aaa)<span class="comment">//'1234556789'</span></div><div class="line"><span class="comment">//通过变量aaa找到右边相同key为aaa的对象取值；</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123;<span class="attr">aaa</span>:qqq&#125; = &#123;<span class="attr">aaa</span>:<span class="string">'1234556789'</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(qqq);<span class="comment">//'1234556789'    </span></div><div class="line"><span class="comment">//如果要想有两种方式取值可以aaa:qqq这样aaa和qqq都可以取到右边key为aaa的值</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> &#123;a=<span class="number">2</span>&#125; = &#123;<span class="attr">a</span>:<span class="literal">null</span>&#125;；</div><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">//null</span></div><div class="line"><span class="comment">//对象也可以指定默认的初始值</span></div><div class="line"><span class="keyword">var</span> &#123;a=<span class="number">2</span>&#125; = &#123;<span class="attr">a</span>:<span class="literal">undefined</span>&#125;</div><div class="line"><span class="built_in">console</span>.log(a)<span class="comment">//2</span></div><div class="line"><span class="comment">//未定义时取默认值</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a;</div><div class="line">&#123;a&#125; = &#123;<span class="attr">a</span>:<span class="string">'9'</span>&#125;;</div><div class="line"><span class="comment">//报错    </span></div><div class="line">(&#123;a&#125;) = &#123;<span class="attr">a</span>:<span class="number">9</span><span class="string">''</span>&#125;;</div><div class="line"><span class="built_in">console</span>.log(a)<span class="comment">//9</span></div></pre></td></tr></table></figure>
 <p>undefined 和null 会报错是因为他们没办发转换成对象，所以报错。        </p>
 <h4 id="解构赋值不仅限于var，const，let都可以，以上用var做例子；"><a href="#解构赋值不仅限于var，const，let都可以，以上用var做例子；" class="headerlink" title="解构赋值不仅限于var，const，let都可以，以上用var做例子；"></a>解构赋值不仅限于var，const，let都可以，以上用var做例子；</h4><h2 id="遍历Map结构"><a href="#遍历Map结构" class="headerlink" title="遍历Map结构"></a>遍历Map结构</h2><p>配合变量的解构赋值。获取键名和键值，      </p>
@@ -172,7 +176,7 @@ a[nb]
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.keyjs.com/2016/10/12/ECMAScript6/" data-id="ciu6tcf2200001vbm8nsyxquq" class="article-share-link">Share</a>
+      <a data-url="http://www.keyjs.com/2016/10/12/ECMAScript6/" data-id="ciu6uxl4i00006ebmnb18piyd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,6 +184,15 @@ a[nb]
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/10/12/花瓣/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          花瓣
+        
+      </div>
+    </a>
   
   
     <a href="/2016/10/12/新文章/" id="article-nav-older" class="article-nav-link-wrap">
@@ -219,6 +232,10 @@ a[nb]
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/10/12/花瓣/">花瓣</a>
+          </li>
         
           <li>
             <a href="/2016/10/12/ECMAScript6/">ECMAScript6</a>
