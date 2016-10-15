@@ -3,24 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>react-router | keyjs</title>
+  <title>keyjs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="react-routerreact路由随手笔记     
-路由引用
-1234567891011121314151617import &amp;#123;Router, Route, hashHistory&amp;#125; from &apos;react&apos;```   ### route 路由定义通过route的path属性定义路由     Router 是容器，有个history属性可以定义路由的方式    ```ja">
+  <meta name="description" content="react-routerreact路由随手笔记
+路由引用import {Router, Route, hashHistory} from &apos;react&apos;
+
+route路由定义通过route的path属性定义路由Router 是容器，有个history属性可以定义路由的方式          
+ReactDom.render((
+  &amp;lt;Router history={hashHistory}&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-router">
+<meta property="og:title" content="keyjs">
 <meta property="og:url" content="http://www.keyjs.com/2016/10/15/react-router/index.html">
 <meta property="og:site_name" content="keyjs">
-<meta property="og:description" content="react-routerreact路由随手笔记     
-路由引用
-1234567891011121314151617import &amp;#123;Router, Route, hashHistory&amp;#125; from &apos;react&apos;```   ### route 路由定义通过route的path属性定义路由     Router 是容器，有个history属性可以定义路由的方式    ```ja">
-<meta property="og:updated_time" content="2016-10-15T15:47:14.000Z">
+<meta property="og:description" content="react-routerreact路由随手笔记
+路由引用import {Router, Route, hashHistory} from &apos;react&apos;
+
+route路由定义通过route的path属性定义路由Router 是容器，有个history属性可以定义路由的方式          
+ReactDom.render((
+  &amp;lt;Router history={hashHistory}&amp;">
+<meta property="og:updated_time" content="2016-10-15T16:07:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-router">
-<meta name="twitter:description" content="react-routerreact路由随手笔记     
-路由引用
-1234567891011121314151617import &amp;#123;Router, Route, hashHistory&amp;#125; from &apos;react&apos;```   ### route 路由定义通过route的path属性定义路由     Router 是容器，有个history属性可以定义路由的方式    ```ja">
+<meta name="twitter:title" content="keyjs">
+<meta name="twitter:description" content="react-routerreact路由随手笔记
+路由引用import {Router, Route, hashHistory} from &apos;react&apos;
+
+route路由定义通过route的path属性定义路由Router 是容器，有个history属性可以定义路由的方式          
+ReactDom.render((
+  &amp;lt;Router history={hashHistory}&amp;">
   
     <link rel="alternate" href="/atom.xml" title="keyjs" type="application/atom+xml">
   
@@ -83,29 +92,67 @@
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      react-router
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h1><p>react路由随手笔记     </p>
-<p>路由引用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;Router, Route, hashHistory&#125; <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="string">``</span><span class="string">`   </span></div><div class="line"></div><div class="line">### route </div><div class="line">路由定义通过route的path属性定义路由     </div><div class="line">Router 是容器，有个history属性可以定义路由的方式    </div><div class="line"></div><div class="line">`<span class="string">``</span>javascript    </div><div class="line"></div><div class="line">ReactDom.render((</div><div class="line">  &lt;Router history=&#123;hashHistory&#125;&gt;</div><div class="line">    &lt;Route path='/' component=&#123;Index&#125;/&gt;</div><div class="line">    &lt;Route path='/home' component=&#123;Data&#125;/&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">  ),document.getElementById('content')</div><div class="line">)</div></pre></td></tr></table></figure>
+        <h1 id="react-router"><a href="#react-router" class="headerlink" title="react-router"></a>react-router</h1><p>react路由随手笔记</p>
+<h3 id="路由引用"><a href="#路由引用" class="headerlink" title="路由引用"></a>路由引用</h3><pre><code class="javascript"><span class="keyword">import</span> {Router, Route, hashHistory} <span class="keyword">from</span> <span class="string">'react'</span>
+</code></pre>
+<h3 id="route"><a href="#route" class="headerlink" title="route"></a>route</h3><p>路由定义通过route的path属性定义路由<br>Router 是容器，有个history属性可以定义路由的方式          </p>
+<pre><code class="javascript">ReactDom.render((
+  &lt;Router history={hashHistory}&gt;     
+    &lt;Route path='/' component={Index}/&gt;       
+    &lt;Route path='/home' component={Data}/&gt;     
+  &lt;/Router&gt;      
+  ),document.getElementById('content')     
+)
+</code></pre>
 <p>path属性定义路由<br>跟路由加载Index组件，/home加载Data组件，不单单加载Data组件，会先加载index组件然后再加载Data组件 </p>
 <h3 id="IndexRoute"><a href="#IndexRoute" class="headerlink" title="IndexRoute"></a>IndexRoute</h3><p>指定根路由加载的组件，根路由加载一个组件这个组件本身并没有东西，只负责让子组件加载进去</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React,&#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props)&#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>.state=&#123;&#125;;</div><div class="line">  &#125;</div><div class="line">  render()&#123;</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;&#123;this.props.children&#125;&lt;/div&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="string">``</span><span class="string">`   </span></div><div class="line">我们用IndexRoute指定根路由组件，此时的this.props.children就是我们IndexRoute指定加载的组件。</div><div class="line"></div><div class="line">### IndexRedirect根路由路由重定向    </div><div class="line"></div><div class="line">`<span class="string">``</span>javascript</div><div class="line">ReactDom.render((</div><div class="line">  &lt;Router history = &#123;hashHistory&#125;&gt;</div><div class="line">    &lt;Route path = '/' component=&#123;App&#125;&gt;</div><div class="line">      &lt;IndexRoute component = &#123;Index&#125;/&gt;</div><div class="line">      &lt;IndexRedirect to="/po" /&gt;</div><div class="line">      &lt;Route path = '/po' component = &#123;Data&#125;/&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">  ),document.getElementById('content')</div><div class="line">```    </div><div class="line">这时根路由变成加载Data组件，to的值是路由；</div><div class="line"></div><div class="line">## Link   </div><div class="line">Link取代a标签，有to属性值是路由，跳转到那个路由  </div><div class="line">activeStyle属性指定路由样式</div><div class="line">activeClassName指定路由的class  </div><div class="line"></div><div class="line">```javascript</div><div class="line">render() &#123;</div><div class="line">    </div><div class="line">    return (</div><div class="line">      &lt;div className="productBox"&gt;</div><div class="line">        &lt;div className='tab'&gt;</div><div class="line">          &lt;div className='tab-left'&gt;&lt;Link to='/ome' activeStyle=&#123;&#123;color:'green'&#125;&#125;&gt;路由ome&lt;/Link&gt;&lt;/div&gt;</div><div class="line">          &lt;div className='tab-right'&gt;&lt;Link to='/index' activeClassName=&#123;&#123;main&#125;&#125;&gt;路由index&lt;/Link&gt;&lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">```     </div><div class="line">### IndexLink</div><div class="line">链接到根路由/，不要使用Link，要使用IndexLink</div><div class="line"></div><div class="line">```javascript</div><div class="line">&lt;IndexLink to='/'&gt;到根路由&lt;/IndexLink&gt;</div></pre></td></tr></table></figure>
+<pre><code class="javascript"><span class="keyword">import</span> React,{Component} <span class="keyword">from</span> <span class="string">'react'</span>
+
+<span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>{
+  <span class="keyword">constructor</span>(props){
+    <span class="keyword">super</span>(props);
+    <span class="keyword">this</span>.state={};
+  }
+  render(){
+    <span class="keyword">return</span> &lt;div&gt;{this.props.children}&lt;/div&gt;
+  }
+}
+</code></pre>
+<p>我们用IndexRoute指定根路由组件，此时的this.props.children就是我们IndexRoute指定加载的组件。</p>
+<h3 id="IndexRedirect根路由路由重定向"><a href="#IndexRedirect根路由路由重定向" class="headerlink" title="IndexRedirect根路由路由重定向"></a>IndexRedirect根路由路由重定向</h3><pre><code class="javascript">ReactDom.render((
+  &lt;Router history = {hashHistory}&gt;
+    &lt;Route path = '/' component={App}&gt;
+      &lt;IndexRoute component = {Index}/&gt;
+      &lt;IndexRedirect to="/po" /&gt;
+      &lt;Route path = '/po' component = {Data}/&gt;
+    &lt;/Route&gt;
+  &lt;/Router&gt;
+  ),document.getElementById('content')
+</code></pre>
+<p>这时根路由变成加载Data组件，to的值是路由；</p>
+<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p>Link取代a标签，有to属性值是路由，跳转到那个路由<br>activeStyle属性指定路由样式<br>activeClassName指定路由的class  </p>
+<pre><code class="javascript">render() {
+
+    <span class="keyword">return</span> (
+      &lt;div className="productBox"&gt;
+        &lt;div className='tab'&gt;
+          &lt;div className='tab-left'&gt;&lt;Link to='/ome' activeStyle={{color:'green'}}&gt;路由ome&lt;/Link&gt;&lt;/div&gt;
+          &lt;div className='tab-right'&gt;&lt;Link to='/index' activeClassName={{main}}&gt;路由index&lt;/Link&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    )
+  }
+</code></pre>
+<h3 id="IndexLink"><a href="#IndexLink" class="headerlink" title="IndexLink"></a>IndexLink</h3><p>链接到根路由/，不要使用Link，要使用IndexLink        </p>
+<pre><code class="javascript">&lt;IndexLink to=<span class="string">'/'</span>&gt;到根路由&lt;<span class="regexp">/IndexLink&gt;</span>
+</code></pre>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.keyjs.com/2016/10/15/react-router/" data-id="ciubdmqrn0000h2bmszs43bvh" class="article-share-link">Share</a>
+      <a data-url="http://www.keyjs.com/2016/10/15/react-router/" data-id="ciubeg4wi0002xjbmdfaabab1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -154,7 +201,7 @@
       <ul>
         
           <li>
-            <a href="/2016/10/15/react-router/">react-router</a>
+            <a href="/2016/10/15/react-router/">(no title)</a>
           </li>
         
           <li>
