@@ -73,10 +73,7 @@
   </div>
   <audio autoplay="autoplay" loop='loop'  src='http://www.openonline.cn/new_homepages/xshd/hd_main/space/articel/player/love.mp3'></audio>
   <script type="text/javascript">
-
-
-
-const text = [
+    const text = [
     '这是你第一次来西湖，故事从这里开始，一切开始因为你而改变，这是所有后来一切的起点，今生缘在此相聚！',
     '冰糖葫芦回忆，这是我在天目山上班的时候，那时刚刚起步，没有太多的修饰却很开心，没有太多时间总是在那里走走却走不腻！',
     '每次到这里我都会拉着你快速冲过去，就想看你那不知所措的傻逼样，哈哈！',
@@ -100,7 +97,7 @@ const text = [
     ];
     const img = [];
     const nb = 0;
-    const cl = 1;
+    var cl = 1;
     const height = document.documentElement.clientHeight;
     const main = document.getElementById('item');
     const tx = document.getElementsByClassName('text');
@@ -128,9 +125,9 @@ const text = [
         'http://www.keyjs.com/love/images/571CC568997CB931B840745E1B5A04FE.png'
 
     ];
-    let bu = true;
-    let tops = 0;
-    let dangqian = 0;
+    var bu = true;
+    var tops = 0;
+    var dangqian = 0;
 
     window.addEventListener('scroll',()=>{
       console.log( document.body.scrollTop );
@@ -166,8 +163,8 @@ const text = [
       create(){
         const el = document.createElement('img');
         this.style = el.style;
-        this.style.width = `${100}%`;
-        this.style.height = `${100}%`;
+        this.style.width = 100 + '%';
+        this.style.height = 100 + '%';
         this.style.position = 'absolute';
         this.style.backgroundSize = '100%';
         this.style.backgroundRepeat = 'no-repeat';
@@ -177,130 +174,14 @@ const text = [
         this.style.left = 0;
         main.appendChild(el);
         el.setAttribute('src',`${imgs[i]}`);
-        console.log( el );
-        
-        console.log(  );
+
       }
     }//类
 
-    for( let i = 0; i < 20; i ++ ){
+    for( var i = 0; i < 20; i ++ ){
       new Item(i)//实例化对象
     }//主循环
     tx[nb].innerHTML = `${text[nb]}`
-
-
-  
-    // const text = [
-    // '这是你第一次来西湖，故事从这里开始，一切开始因为你而改变，这是所有后来一切的起点，今生缘在此相聚！',
-    // '冰糖葫芦回忆，这是我在天目山上班的时候，那时刚刚起步，没有太多的修饰却很开心，没有太多时间总是在那里走走却走不腻！',
-    // '每次到这里我都会拉着你快速冲过去，就想看你那不知所措的傻逼样，哈哈！',
-    // '骑电瓶车，包的像个惠安女哈哈！看看这煞笔的眼神，这围巾的围发好像出自我手，哈哈！',
-    // '吃货带你吃烤鱼，辣的要死，一点都不好吃我还是比较吃羊排。',
-    // '这笑容，容我笑会，已经找不到比这张更好笑的了，你的表情已发挥到极致',
-    // '这是杭州近几年老下的最大的雪，也是你第一次看学，虽然冷的要死但还是激动的要出去看',
-    // '这是在地铁站，本来还有一张你的表情图片，可是那张图片不符合格式，无奈没有办法放上来',
-    // '这是在KTV，瞧这小脸蛋圆的，哈哈，我还有一张更圆的，哈哈！',
-    // '看，捕捉到女流氓一只，看这架势是要打劫，我确定这围巾围发出自我的手艺。',
-    // '这张图忘记在哪里了，不过拍的挺好的，我拍的',
-    // '你心心念念的潮汕火锅在这，看看图，望梅止渴一下',
-    // '鬼脚蟹，好次不，那个一扎的酸梅汁就你一个人喝，可见当时的饭量！！！',
-    // '煞笔你生日啦，没有太多的庆祝，只有一个蛋糕，希望你每年都快快乐乐！！！',
-    // '这张是那天拍完婚纱照会来第一次带你去西溪印象城吃饭，以前经常跟你说那里的好吃，终于带你去了',
-    // '第一次去看电影，周星驰的美人鱼，这一桶爆米花就没吃多少',
-    // '这张照片是我拍的最好的一组，快夸我！',
-    // '试穿婚纱的时候，哈哈，果然看起来不一样了',
-    // '快乐的煞笔，瞧这动作，哈哈！！---情人节快乐！！！！',
-    // '公元2016年12月9号我们结婚了，终究修成正果，你是最美的新娘.最后---dear--情人节快乐！！！！'
-    // ];
-    // const img = [];
-    // const nb = 0;
-    // var cl = 1;
-    // const height = document.documentElement.clientHeight;
-    // const main = document.getElementById('item');
-    // const tx = document.getElementsByClassName('text');
-    // const imgs = [
-    //     'http://www.keyjs.com/love/images/1.png',
-    //     'http://www.keyjs.com/love/images/31.png',
-    //     'http://www.keyjs.com/love/images/4.png',
-    //     'http://www.keyjs.com/love/images/5.png',
-    //     'http://www.keyjs.com/love/images/7.png',
-    //     'http://www.keyjs.com/love/images/8.png',
-    //     'http://www.keyjs.com/love/images/9.png',
-    //     'http://www.keyjs.com/love/images/A0D9439D257F47A712CCDB96EA7CF89F.png',
-    //     'http://www.keyjs.com/love/images/A31E159D0B9ED7C3203BD233B1FD55D0.png',
-    //     'http://www.keyjs.com/love/images/A9706609A5FED248A2D0491832D6D616.png',
-    //     'http://www.keyjs.com/love/images/D23B329098F992BD8AA42C82E0ED0EAB.png',
-    //     'http://www.keyjs.com/love/images/890EB7C2DF91D466AFA3E94A66A57CE6.png',
-    //     'http://www.keyjs.com/love/images/0E4D635ECDE8C3E365CD52FAF68E3FF9.png',
-    //     'http://www.keyjs.com/love/images/4B9942D2E1FCDA84EE8472F32680E897.png',
-    //     'http://www.keyjs.com/love/images/65322ACEE5CC1D6B39657F42189330DB.png',
-    //     'http://www.keyjs.com/love/images/D5820F0BD6C401FA7FD230CDA8204582.png',
-    //     'http://www.keyjs.com/love/images/DEECEC1031BD83D74E6A030C35115E97.png',
-    //     'http://www.keyjs.com/love/images/DA5B3FB6E68BF4D9CC53A648B8B4079E.png',
-    //     'http://www.keyjs.com/love/images/E8DF25787B78CA2608139F66B017D7C8.png',
-    //     'http://www.keyjs.com/love/images/B2D1CF8EAFD5CFDF5125662D87D2F889.png',
-    //     'http://www.keyjs.com/love/images/571CC568997CB931B840745E1B5A04FE.png'
-
-    // ];
-    // var bu = true;
-    // var tops = 0;
-    // var dangqian = 0;
-
-    // window.addEventListener('scroll',()=>{
-    //   console.log( document.body.scrollTop );
-    //     if( Number.parseInt(document.body.scrollTop/320)%2==1 ){
-    //       if( bu ){    
-    //         if( document.body.scrollTop > tops && Number.parseInt(document.body.scrollTop/320)%2 ){
-    //           dangqian++;
-    //           console.log(dangqian)
-    //           tx[nb].innerHTML = `${text[dangqian]}`
-    //         }else{
-    //           dangqian--;
-    //           console.log(dangqian)
-    //           tx[nb].innerHTML = `${text[dangqian]}`
-    //         }
-    //       }
-    //       bu = false;
-    //     }
-    //   if( Number.parseInt(document.body.scrollTop/320)%2==0 ){
-    //     bu = true;
-    //   }else{
-    //     bu = false;
-    //   }
-
-    //   tops = document.body.scrollTop;
-    // })
-
-
-    // class Item {
-    //   constructor(x){
-    //     this.x = x;
-    //     this.create();
-    //   }
-    //   create(){
-    //     const el = document.createElement('img');
-    //     this.style = el.style;
-    //     this.style.width = 100 + '%';
-    //     this.style.height = 100 + '%';
-    //     this.style.position = 'absolute';
-    //     this.style.backgroundSize = '100%';
-    //     this.style.backgroundRepeat = 'no-repeat';
-    //     this.src = `${imgs[i]}`;
-    //     this.className = 'every';
-    //     this.style.top = `${this.x * height}px`;
-    //     this.style.left = 0;
-    //     main.appendChild(el);
-    //     el.setAttribute('src',`${imgs[i]}`);
-    //     console.log( el );
-        
-    //     console.log(  );
-    //   }
-    // }//类
-
-    // for( var i = 0; i < 20; i ++ ){
-    //   new Item(i)//实例化对象
-    // }//主循环
-    // tx[nb].innerHTML = `${text[nb]}`
   </script>
 </body>
 </html>
