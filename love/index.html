@@ -131,9 +131,9 @@
 
     window.addEventListener('scroll',()=>{
       console.log( document.body.scrollTop );
-        if( Number.parseInt(document.body.scrollTop/320)%2==1 ){
+        if( Number.parseInt(document.body.scrollTop/310)%2==1 ){
           if( bu ){    
-            if( document.body.scrollTop > tops && Number.parseInt(document.body.scrollTop/320)%2 ){
+            if( document.body.scrollTop > tops && Number.parseInt(document.body.scrollTop/310)%2 ){
               dangqian++;
               console.log(dangqian)
               tx[nb].innerHTML = `${text[dangqian]}`
@@ -145,7 +145,7 @@
           }
           bu = false;
         }
-      if( Number.parseInt(document.body.scrollTop/320)%2==0 ){
+      if( Number.parseInt(document.body.scrollTop/310)%2==0 ){
         bu = true;
       }else{
         bu = false;
