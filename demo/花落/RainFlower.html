@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>花雨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <meta charset = 'utf-8'>
+  <style type="text/css">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  html,body{
+    width: 100%;
+    height: 100%;
+  }
+  .container{
+    width: 100%;
+    height: 100%;
+    background-image: url(http://pic.90sjimg.com/back_pic/qk/back_origin_pic/00/01/49/47e8767740df8a9ff95ab89739a5da98.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+  }
+  </style>
+</head>
+<body>
+<audio src="123257979.mp3" autoplay="autoplay" loop>
+Your browser does not support the audio element.
+</audio>
+  <div class="container">
+    
+  </div>
+
+
+<script type="text/javascript">
+// var count = 100;//花瓣数量
+// var width = 40;//节点宽度
+// var height= 40;//节点高度
+// var spe = [1.3,1.6,1.9,2.3,2.5,3];//6种可随机的下落速度
+// var les = [0.3,-0.3];//两种可随机的左右偏移
+// var rotates = 1;//每次增加的旋转角度
+// var FlowerHeight = -200;//节点出现的位置
+// var container = document.getElementsByClassName('container')[0];
+// var imgs = ['http://img.mukewang.com/55adde120001d34e00410041.png',
+//         'http://img.mukewang.com/55adde2a0001a91d00410041.png',
+//         'http://img.mukewang.com/55adde5500013b2500400041.png',
+//         'http://img.mukewang.com/55adde62000161c100410041.png',
+//         'http://img.mukewang.com/55adde7f0001433000410041.png',
+//         'http://img.mukewang.com/55addee7000117b500400041.png'];
+//   var Flower = function(){
+//     this.create();
+//   }
+//   Flower.prototype.create = function(){
+//     var op = this.opacity = 1;
+//     this.le = les[Math.round(Math.random()*1)];
+//     this.sped = spe[Math.round(Math.random()*5)];
+//     var nb = Math.round(Math.random()*4);
+//     var left = this.l = Math.random()*(document.body.offsetWidth-width);
+//     var top = this.t = Math.random()*FlowerHeight;
+//     var rotate = this.r = Math.random()*360;
+    
+//     var div = document.createElement('div');
+//     this.style = div.style;
+//     this.style.width = width +'px';
+//     this.style.height = height +'px';
+//     this.style.position = 'absolute';
+//     this.className = 'content';
+//     this.style.left = left +'px';
+//     this.style.top = top + 'px';
+//     this.style.transform = 'rotate('+rotate+'deg)';
+//     this.style.opacity = op;
+
+//     this.style.backgroundImage = 'url('+imgs[nb]+')';
+//     container.appendChild(div);
+//   };
+//   Flower.prototype.move = function(x,y,r,opacity){
+//     this.l = x;
+//     this.t = y;
+//     this.r = r;
+//     this.opacity = opacity;
+//     this.style.left = x + 'px';
+//     this.style.top = y + 'px';
+//     this.style.transform = 'rotate('+r+'deg)';
+//     this.style.opacity = opacity;
+//   }
+//   Flower.prototype.reset=function(){
+//     this.move(Math.random()*(document.body.offsetWidth-width),Math.random()*FlowerHeight,Math.random()*360,1)
+//   }
+
+//   var all = [];
+
+//   for( var i =0; i<count; i++ ){
+//     all.push(new Flower());
+//   }
+
+//   setInterval( function(){
+//     all.forEach(function( Flower ){
+//       var x = Flower.l + Flower.le;
+//       var y = Flower.t + Flower.sped;
+//       var r = Flower.r + rotates;
+//       var opacity = Flower.opacity-0.002;
+//       if( y>document.body.offsetHeight ){
+//         Flower.reset();
+//       }else{
+//         Flower.move(x,y,r,opacity);
+//       }
+//     })
+//   }, 10);
+const count = 100;//花瓣数量
+const width = 40;//节点宽度
+const height= 40;//节点高度
+const spe = [1.3,1.6,1.9,2.3,2.5,3];//6种可随机的下落速度
+const les = [0.3,-0.3];//两种可随机的左右偏移
+const rotates = 1;//每次增加的旋转角度
+const FlowerHeight = -200;//节点出现的位置
+const container = document.getElementsByClassName('container')[0];
+const imgs = ['http://img.mukewang.com/55adde120001d34e00410041.png',
+        'http://img.mukewang.com/55adde2a0001a91d00410041.png',
+        'http://img.mukewang.com/55adde5500013b2500400041.png',
+        'http://img.mukewang.com/55adde62000161c100410041.png',
+        'http://img.mukewang.com/55adde7f0001433000410041.png',
+        'http://img.mukewang.com/55addee7000117b500400041.png'];
+
+class Flower {
+  constructor() {
+    this.create();
+  }
+
+  create() {
+    const op = this.opacity = 1;
+    this.le = les[Math.round(Math.random()*1)];
+    this.sped = spe[Math.round(Math.random()*5)];
+    const nb = Math.round(Math.random()*4);
+    const left = this.l = Math.random()*(document.body.offsetWidth-width);
+    const top = this.t = Math.random()*FlowerHeight;
+    const rotate = this.r = Math.random()*360;
+    
+    const div = document.createElement('div');
+    this.style = div.style;
+    this.style.width = `${width}px`;
+    this.style.height = `${height}px`;
+    this.style.position = 'absolute';
+    this.className = 'content';
+    this.style.left = `${left}px`;
+    this.style.top = `${top}px`;
+    this.style.transform = `rotate(${rotate}deg)`;
+    this.style.opacity = op;
+
+    this.style.backgroundImage = `url(${imgs[nb]})`;
+    container.appendChild(div);
+  }
+
+  move(x, y, r, opacity) {
+    this.l = x;
+    this.t = y;
+    this.r = r;
+    this.opacity = opacity;
+    this.style.left = `${x}px`;
+    this.style.top = `${y}px`;
+    this.style.transform = `rotate(${r}deg)`;
+    this.style.opacity = opacity;
+  }
+
+  reset() {
+    this.move(Math.random()*(document.body.offsetWidth-width),Math.random()*FlowerHeight,Math.random()*360,1)
+  }
+}
+
+const all = [];
+
+for( let i =0; i<count; i++ ){
+  all.push(new Flower());
+}
+
+setInterval( () => {
+  all.forEach(Flower => {
+    const x = Flower.l + Flower.le;
+    const y = Flower.t + Flower.sped;
+    const r = Flower.r + rotates;
+    const opacity = Flower.opacity-0.002;
+    if( y>document.body.offsetHeight ){
+      Flower.reset();
+    }else{
+      Flower.move(x,y,r,opacity);
+    }
+  })
+}, 10);
+  </script>
+</body>
+</html>
