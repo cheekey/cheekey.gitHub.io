@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#game{
+			margin: 40px auto;
+			width: 500px;
+			height: 500px;
+			position: relative;
+		}
+		#game .box {
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			transition:0.5s;
+		}
+		#game .box-barrier{
+			background-image: url(box-5.png);
+		}
+		#game .box-box {
+			background-image: url(box-1.png ); 
+		}
+		#game .box-hero {
+			background-image: url(box-9.png); 
+		}
+		#game .box-end {
+			background-image: url(box-22.png); 
+
+			background-color: #C8C3C3;
+		}
+
+		#game .success{
+			z-index: 1;
+			background-color: #fff;
+			border: 5px solid #ccc;
+			width: 300px;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+			font-size: 28px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			opacity: 0;
+			transition: opacity 500ms ease;
+		}
+
+		#game .success.show{
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+
+<div id="game">
+	<div class="success">
+		Success!
+	</div>
+</div>
+
+<script>
+	void function(){
+		// TODO: 二维数组
+		var map = [
+			[ 0, 1, 1, 1, 1, 1, 1, 1, 0, 0 ],
+			[ 1, 1, 4, 4, 4, 0, 0, 1, 0, 0 ],
+			[ 1, 0, 0, 0, 0, 2, 0, 1, 0, 0 ],
+			[ 1, 0, 2, 0, 1, 0, 0, 1, 0, 0 ],
+			[ 1, 0, 0, 0, 0, 0, 0, 1, 1, 1 ],
+			[ 1, 0, 0, 0, 3, 0, 0, 0, 1, 1 ],
+			[ 1, 0, 1, 0, 1, 1, 0, 0, 0, 1 ],
+			[ 1, 0, 0, 0, 1, 1, 2, 1, 0, 1 ],
+			[ 1, 1, 1, 1, 1, 1, 0, 0, 0, 1 ],
+			[ 0, 0, 0, 0, 0, 1, 1, 1, 1, 1 ]
+		];
+
+		var boxWidth = 50;
+		var boxHeight = 50;
+		var heroX, heroY, heroBox;
+		var ends = {};
+		var types = [ null, "box-barrier", "box-box", "box-hero", "box-end" ];
+		var success = false;
+    
+		var game = document.getElementById( "game" );
+
+		function judgeSuccess(){
+		  for( var i in ends )
+		    if( ends[ i ] == 0 )
+		      return;
+		  
+		   success = true;
+		   document.querySelector( "#game .success" ).className = "success show";
+		}
+
+		function pos( box, x, y ){
+			box.style.left = x * boxWidth + "px";
+		  box.style.top = y * boxHeight + "px";
+		}
+
+		function swap( x1, y1, x2, y2 ){
+		  var t = map[ y1 ][ x1 ];
+		  map[ y1 ][ x1 ] = map[ y2 ][ x2 ];
+		  map[ y2 ][ x2 ] = t;
+		}
+
+		function render(){
+			var y, x, m, l, l1, n;
+
+		  for( y = 0, l = map.length; y < l; y ++ ){
+		    for( x = 0, l1 = map[ y ].length; x < l1; x ++ ){
+		    	var m = map[ y ][ x ];
+
+		    	if( types[ m ] ){
+		    		var box = document.createElement( "div" );  
+		    		box.className = "box " + types[ m ];
+		    		pos( box, x, y  );
+		    		game.appendChild( box );//生成地图
+
+		    		if( m === 3 ){
+		    			heroX = x;
+		    			heroY = y;
+		    		  heroBox = box;
+		    		}else if( m === 4 ){
+		    		  ends[ y + "," + x ] = 0;
+		    		}//遇到3，4时做特殊处理
+
+		    		map[ y ][ x ] = {
+		    			type: m == 4 ? 0 : m,
+		    			node: box
+		    		}//对4进性特殊处理
+		    	}else{
+		    	  map[ y ][ x ] = {
+		    	  	type: 0,
+		    	  	node: null
+		    	  }//对0的处理
+		    	}
+		    } 
+		  }
+		}
+
+		document.addEventListener( "keydown", function(event){//按键移动时响应
+			if( success )
+			  return ;
+
+			var keyCode = event.keyCode;
+			var x = heroX, y = heroY, sx, sy;//英雄坐标以及箱子前面的坐标声明sx；sy；
+
+			if( keyCode < 37 || keyCode > 40 )
+				return ;
+
+			switch( keyCode ){
+				case 37:
+					x -= 1;
+					sx = x - 1;
+					sy = y;
+					break;
+				case 39:
+				  x += 1;
+				  sx = x + 1;
+				  sy = y;
+				  break;
+				case 38:
+				  y -= 1;
+				  sx = x;
+				  sy = y - 1;
+				  break;
+				case 40:
+				  y += 1;
+				  sx = x;
+				  sy = y + 1;
+				  break;
+			}//方向键以及箱子的位置
+
+			if( map[ y ][ x ] ){
+			  switch( map[ y ][ x ].type ){
+			    case 1:
+			      return ;//遇到障碍1不动
+			      break;
+			    case 2:    
+			      if( map[ sy ][ sx ] && map[ sy ][ sx ].type == 0 ){//当前空格与下一个空格判断
+			        pos( map[ y ][ x ].node, sx, sy );//前进执行
+
+			        if( ends[ y + "," + x ] === 1 )
+			          ends[ y + "," + x ] = 0;
+
+			        if( ends[ sy + "," + sx ] === 0 ){
+			          ends[ sy + "," + sx ] = 1;
+			          judgeSuccess();
+			        }
+
+			        swap( x, y, sx, sy );//英雄与箱子原坐标交换位置
+			      }else{
+			        return ;
+			      }
+			    break;
+			  }
+			  
+			  pos( heroBox, x, y );
+			  swap( x, y, heroX, heroY );
+
+				heroX = x;
+				heroY = y;
+			}
+		}, false );
+
+		render();
+	}();
+</script>
+
+</body>
+</html>
